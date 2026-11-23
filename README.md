@@ -2,13 +2,9 @@
 # 社交媒体受众分析系统
 
 ## 1. 项目简介
-
 本项目是一个基于 Python Flask 开发的社交媒体受众分析系统，主要用于对中文社交媒体评论进行数据处理、情感分析、关键词提取和话题发现。
-
 系统支持 CSV 文件上传与数据清洗，使用预训练多语言情感分析模型识别评论情感倾向，并结合 TF-IDF 和 LDA 技术提取关键词、发现潜在讨论话题。
-
 同时，系统通过 ECharts 实现数据可视化，并提供情感分析摘要、评论筛选和分析结果导出功能，帮助用户了解评论数据中的情感分布与讨论内容。
-
 **项目定位：** NLP 数据分析与可视化应用。
 
 ## 2. 核心功能
@@ -66,7 +62,6 @@
 | 数据格式 | CSV |
 
 ## 4. 系统处理流程
-
 1. 用户上传 CSV 评论文件。
 2. 系统检查文件格式和必要字段。
 3. 对评论数据进行清洗和预处理。
@@ -81,39 +76,59 @@
 
 ```text
 social-media-analysis/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── data/
-│   ├── sample_comments.csv
+├── __pycache__/
+│   └── app.cpython-313.pyc
+├── backup_day10/
+│   ├── keywords.csv
 │   ├── processed_comments.csv
 │   ├── sentiment_comments.csv
 │   ├── sentiment_summary.csv
-│   ├── keywords.csv
 │   └── topics.csv
-│
+├── data/
+│   ├── empty_test.csv
+│   ├── keywords.csv
+│   ├── missing_content_test.csv
+│   ├── nlp_comments.csv
+│   ├── processed_comments.csv
+│   ├── sample_comments.csv
+│   ├── sentiment_comments.csv
+│   ├── sentiment_summary.csv
+│   ├── stopwords.txt
+│   ├── test_duplicate_id.csv
+│   ├── test_empty_comments.csv
+│   ├── test_long_comment.csv
+│   ├── test_missing_content.csv
+│   ├── test_upload.csv
+│   ├── tfidf_keywords.csv
+│   ├── topics.csv
+│   └── word_frequency.csv
 ├── services/
+│   ├── __pycache__/
+│   │   ├── analysis_summary.cpython-313.pyc
+│   │   ├── nlp_preprocess.cpython-313.pyc
+│   │   ├── preprocess.cpython-313.pyc
+│   │   ├── sentiment_analysis.cpython-313.pyc
+│   │   └── topic_analysis.cpython-313.pyc
+│   ├── analysis_summary.py
 │   ├── nlp_preprocess.py
 │   ├── preprocess.py
 │   ├── sentiment_analysis.py
-│   ├── topic_analysis.py
-│   └── analysis_summary.py
-│
+│   └── topic_analysis.py
+├── static/
+│   └── css/
+│       └── style.css
 ├── templates/
 │   ├── index.html
 │   └── upload.html
-│
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   └── images/
-│
-└── tests/
-```
-注：实际项目中的测试文件如果暂时放在根目录，请以仓库中的真实目录结构为准。
+├── app.py
+├── check_analysis_summary.py
+├── generate_test.py
+├── requirements.txt
+├── test_data.py
+├── test_nlp.py
+├── test_sentiment.py
+├── test_topic_analysis.py
+└── test_visualization.py
 
 ## 6. 环境配置与运行
 
